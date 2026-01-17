@@ -1,8 +1,6 @@
 #include <stdio.h>
 #include "set_operations.h"
 
-#include <stdio.h>
-#include "set_operations.h"
 
 void afficherTableau(int tab[], int taille) {
     printf("[");

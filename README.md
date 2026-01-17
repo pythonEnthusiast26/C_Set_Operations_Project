@@ -1,18 +1,33 @@
 # 📊 C-Set-Intersection-Project (S1 S&D)
 
-Une bibliothèque élémentaire en C conçue pour appliquer l'intersection d'ensembles mathématiques sur des tableaux. Ce projet a été développé dans le cadre du cursus **S&D** pour démontrer des structures de données optimisées.
+An elementary C library designed to project mathematical set intersection concepts onto arrays. This project was developed as part of the S&D curriculum to demonstrate optimized data structures through autonomous research.
 
-## ✨ Fonctionnalités
-* **Intersection Unique** : Trouve les éléments communs sans doublons.
-* **Affichage Harmonisé** : Formatage propre des tableaux `[x, y, z]`.
-* **Automatisation complète** : Configuration VS Code incluse pour une compilation en un clic.
+## ✨ Features
+* **Unique Intersection** : Extracts common elements without duplicates.
+* **Harmonized Display** : Clean formatting for arrays as `[x, y, z]`.
+* **Full Automation** : VS Code configuration included for one-click compilation.
 
-## 🚀 Installation & Utilisation
-1. Clonez le dépôt.
-2. Ouvrez le dossier avec **VS Code**.
-3. Appuyez sur `Ctrl + Maj + B` pour lancer la **loop** de compilation automatique.
+## 🚀 Installation & Usage
+1. Clone the repository.
+2. Open the folder in **VS Code**.
+3. Press `Ctrl + Shift + B` to start the automatic compilation loop.
 
-## 🛠️ Stack Technique
-- Langage : C11
-- Compilateur : GCC (MinGW-w64)
-- Environnement : Visual Studio Code
+## 🛠️ Tech Stack
+- Language : C11
+- Compiler : GCC (MinGW-w64)
+- Environment : Visual Studio Code
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

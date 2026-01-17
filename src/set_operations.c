@@ -2,50 +2,61 @@
 
 int extraireUnique(int tableau[], int taille_tableau) {
     if (taille_tableau == 0) return 0;
-    int indice_unique = 1, estDoublon = 0; /*estDoublon : flag indiquant si l'élément courant a déjà été rencontré dans le tableau d'unicité.
-    indice_unique : pointeur de position et compteur du nombre d'éléments uniques insérés.*/ 
+    
+    /* isDuplicate: flag indicating if the current element has already been encountered.
+       unique_index: position pointer and counter for the number of unique elements inserted. */
+    int unique_index = 1, isDuplicate = 0; 
 
-    for (int i=1;i<taille_tableau;i++) {
-        estDoublon = 0;
-        for (int j=0;j<indice_unique;j++) {
-            if (tableau[i]==tableau[j]) { 
-                estDoublon=1;
-                break; // interruption de la vérification dès qu'un doublon est détecté.
+    for (int i = 1; i < taille_tableau; i++) {
+        isDuplicate = 0;
+        for (int j = 0; j < unique_index; j++) {
+            if (tableau[i] == tableau[j]) { 
+                isDuplicate = 1;
+                break; // Stop checking as soon as a duplicate is detected.
             }
         }
-        if (estDoublon==0) { /*Validation de l'unicité : Si estDoublon == 0, l'élément est nouveau, il est donc inséré à l'emplacement libre (indice_unique), 
-            puis le pointeur est décalé vers la droite pour la prochaine insertion*/ 
-            tableau[indice_unique]=tableau[i];
-            indice_unique++;
+        
+        /* Uniqueness validation: If isDuplicate == 0, the element is new. 
+           It is inserted at the free slot (unique_index), then the pointer 
+           is moved to the right for the next insertion. */
+        if (isDuplicate == 0) { 
+            tableau[unique_index] = tableau[i];
+            unique_index++;
         }
     }
-    return indice_unique;
+    return unique_index;
 }
 
-int extraireIntersection(int tab1[],int taille1,int tab2[],int taille2,int resultat[]){
-    int indice_resultat=0;
-    // Suppression des doublons via un loop d'unicité pour guarantir l'unicité de tous les éléments et ajustement de la taille du tableau.
+int extraireIntersection(int tab1[], int taille1, int tab2[], int taille2, int resultat[]) {
+    int result_index = 0;
+    
+    /* Removing duplicates via a loop to ensure uniqueness for all elements 
+       and adjusting the logical size of the arrays. */
     int n1 = extraireUnique(tab1, taille1);
     int n2 = extraireUnique(tab2, taille2);
 
     for (int i = 0; i < n1; i++) {
-        int estCommun = 0; // flag indiquant si l'élément pointé appartient à l'intersection des deux tableaux.
+        // isCommon: flag indicating if the pointed element belongs to the intersection.
+        int isCommon = 0; 
+        
         for (int j = 0; j < n2; j++) { 
-            if (tab1[i] == tab2[j]) { // On compare l'élément actuel au contenu du deuxième tableau. Si une correspondance est trouvée (flag = 1), on valide sa présence dans l'intersection.
-                estCommun = 1;
+            /* Compare current element with the second array's content. 
+               If a match is found (flag = 1), its presence in the intersection is validated. */
+            if (tab1[i] == tab2[j]) { 
+                isCommon = 1;
                 break;
             }
         }
-        if (estCommun == 1) {
-            resultat[indice_resultat] = tab1[i];
-            indice_resultat++;
+        
+        /* After the verification loop ends:
+           - If flag is 1: the element is confirmed to be in the intersection.
+           - Insert it into the result array at 'result_index'.
+           - Increment 'result_index' for the next slot.
+           - Otherwise (flag = 0): the element is not common, continue with the next one. */
+        if (isCommon == 1) {
+            resultat[result_index] = tab1[i];
+            result_index++;
         }
-        /* Après la fin du loop de vérification :
-   - Si le flag vaut 1 : l'élément est confirmé comme appartenant à l'intersection.
-   - On l'insère dans le tableau de résultat à la position 'indice_resultat'.
-   - On incrémente 'indice_resultat' pour préparer le prochain emplacement.
-   - Sinon (flag = 0) : l'élément n'est pas commun, on continue avec l'élément suivant.
-*/
     }
-    return indice_resultat;
+    return result_index;
 }

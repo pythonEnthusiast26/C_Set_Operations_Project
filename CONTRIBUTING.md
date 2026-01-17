@@ -1,13 +1,13 @@
-# Contribuer au projet S&D
+# Contributing to the S&D Project
 
-Merci de l'intérêt que vous portez à ce projet d'intersection d'ensembles !
+Thank you for your interest in this set intersection project!
 
-## Comment aider ?
-1. Signalez des bugs via les "Issues".
-2. Proposez des optimisations pour l'algorithme d'intersection.
-3. Améliorez la documentation.
+## How to help?
+1. Report bugs via "Issues".
+2. Propose optimizations for the intersection algorithm.
+3. Improve the documentation.
 
-## Processus
-- Forkez le projet.
-- Créez une branche pour vos modifications.
-- Soumettez une Pull Request.
+## Process
+- Fork the project.
+- Create a branch for your changes.
+- Submit a Pull Request.
